@@ -63,6 +63,8 @@ body {
 }
 
 #button-container {
+    position: sticky;
+    top: 10px;
     text-align: center;
 }
 
@@ -72,4 +74,71 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(248, 113, 89);
+}
+
+.btn-selected{
+    background-color: rgb(255, 70, 37);
+}
+
+.modal-content{
+    z-index: 1000;
+    background-color: #FFFFFF;
+    padding: 1%;
+    margin: 1%;
+    width: 300px;
+    text-align: center;
+    border-radius: 7px;
+    margin: 10px auto
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    right: 50%;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+    background-color: rgb(243, 239, 239); 
+    background-color: rgba(190, 189, 189, 0.4); 
+    width: 30%;
+    height: 70%;
+    margin: 20px 30px;
+}
+
+.close{
+    position: absolute;
+    color: #e45e5e;
+    font-size: 28px;
+    font-weight: bold;
+    right: 10px;
+    top: 10px;
+
+}
+
+.close:hover{
+    color: #f32d2d;
+    cursor: pointer;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: none
+}
+
+.search-bar:focus{
+    border: none;
+    outline: none;
 }

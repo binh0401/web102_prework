@@ -24,6 +24,24 @@ function deleteChildElements(parent) {
 
 // grab the element with the id games-container
 const gamesContainer = document.getElementById("games-container");
+const modal = document.getElementById('modal')
+const closeBtn = document.querySelector('.close')
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none'
+    while(modal.children.length >= 2){
+        modal.removeChild(modal.children[1])
+    }
+})
+
+window.addEventListener('click', (event) => {
+    if(event.target === modal){
+        modal.style.display = 'none'
+        while(modal.children.length >= 2){
+            modal.removeChild(modal.children[1])
+        }
+    }
+})
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
@@ -47,7 +65,20 @@ function addGamesToPage(games) {
             <p>${games[i].description}</p>
             <p>Backers: ${games[i].backers}</p>
         `
-
+        gameCard.addEventListener('click', () => {
+            modal.style.display = 'block'
+            const modalContent = document.createElement('div')
+            modalContent.classList.add('modal-content')
+            modalContent.innerHTML = `
+            <img src='${games[i].img}' class="game-img"/>
+            <h3>${games[i].name}</h3>
+            <p>${games[i].description}</p>
+            <p>Backers: ${games[i].backers}</p>
+            <p>Goals: ${games[i].goal}</p>
+            <p>Pledge: ${games[i].pledged}</p>
+        `
+            if(modal.children.length===1) modal.appendChild(modalContent)
+        })
         // append the game to the games-container
         gamesContainer.appendChild(gameCard)
     }
@@ -136,15 +167,27 @@ const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
 unfundedBtn.addEventListener('click', () => {
+    unfundedBtn.classList.add('btn-selected')
+    if(fundedBtn.classList.contains('btn-selected')) fundedBtn.classList.remove('btn-selected')
+    if(allBtn.classList.contains('btn-selected')) allBtn.classList.remove('btn-selected')
     filterUnfundedOnly()
+    gamesContainer.scrollIntoView({behavior: 'smooth'})
 })
 
 fundedBtn.addEventListener('click', () => {
+    fundedBtn.classList.add('btn-selected')
+    if(unfundedBtn.classList.contains('btn-selected')) unfundedBtn.classList.remove('btn-selected')
+    if(allBtn.classList.contains('btn-selected')) allBtn.classList.remove('btn-selected')
     filterFundedOnly()
+    gamesContainer.scrollIntoView({behavior: 'smooth'})
 })
 
 allBtn.addEventListener('click', () => {
+    allBtn.classList.add('btn-selected')
+    if(fundedBtn.classList.contains('btn-selected')) fundedBtn.classList.remove('btn-selected')
+    if(unfundedBtn.classList.contains('btn-selected')) unfundedBtn.classList.remove('btn-selected')
     showAllGames()
+    gamesContainer.scrollIntoView({behavior: 'smooth'})
 })
 
 /*************************************************************************************
@@ -205,3 +248,49 @@ secondGameElement.innerHTML = `
 `
 secondGameContainer.appendChild(secondGameElement)
 // do the same for the runner up item
+
+
+
+//Customization 1: Buttons become sticky so user can change the filter while scrolling
+
+
+//Customization 2: Auto scroll into games-container when click button filter
+
+//Customization 3: Display detailed Info when click into game card
+
+//Customization 4: Search bar that updates on key stroke
+
+const searchBar = document.querySelector('.search-bar')
+
+searchBar.addEventListener('input', () =>{
+    const query = searchBar.value.toLowerCase()
+    let filterResults = null
+    if(fundedBtn.classList.contains('btn-selected')){
+        const fundedGames = GAMES_JSON.filter(game => {
+            return game.pledged > game.goal
+        })
+
+        filterResults = fundedGames.filter(game => {
+            return game && game.name.toLowerCase().includes(query)
+        })
+    }else if(unfundedBtn.classList.contains('btn-selected')){
+        const unFundedGames = GAMES_JSON.filter(game => {
+            return game.pledged < game.goal
+        })
+
+        filterResults = unFundedGames.filter(game => {
+            return game && game.name.toLowerCase().includes(query)
+        })
+    }else{
+        filterResults = GAMES_JSON.filter(game => {
+            return game && game.name.toLowerCase().includes(query)
+        })
+    }
+
+    deleteChildElements(gamesContainer)
+    addGamesToPage(filterResults)
+
+    
+})
+
+
