@@ -25,10 +25,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/a/73eQdr5' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[https://imgur.com/a/73eQdr5](https://imgur.com/a/73eQdr5)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with [...](https://chromewebstore.google.com/detail/ggaabchcecdbomdcnbahdfddfikjmphe?utm_source=item-share-cb)  
+GIF created with [Chrome Screen Capture extension](https://chromewebstore.google.com/detail/ggaabchcecdbomdcnbahdfddfikjmphe?utm_source=item-share-cb)  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
