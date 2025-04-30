@@ -36,7 +36,7 @@ GIF created with [Chrome Screen Capture extension](https://chromewebstore.google
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+No big challenges at all.
 
 ## License
 
