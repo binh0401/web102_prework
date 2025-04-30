@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [ ] A search bar that response immediately on every user's key stroke. The search results are also filtered by buttons.
-* [ ] The filter buttons now stick to the view point, CSS colors are also added to indicate which button is being selected
+* [ ] The filter buttons now stick to the view point, CSS colors are also added to indicate which button is being selected and autoscroll to games part when buttons are clicked.
 * [ ] A small modal is implemented to display more information about the game.
 
 ## Video Walkthrough
