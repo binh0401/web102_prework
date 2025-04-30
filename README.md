@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://i.imgur.com/6DB0HM4.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough'/>
+<img src='https://github.com/binh0401/web102_prework/blob/main/assets/preworkdemo.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough'/>
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [Chrome Screen Capture extension](https://chromewebstore.google.com/detail/ggaabchcecdbomdcnbahdfddfikjmphe?utm_source=item-share-cb)  
