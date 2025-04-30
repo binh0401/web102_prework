@@ -25,8 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='![image](https://github.com/user-attachments/assets/6ea9d065-f1ca-45b6-8ee3-385be8bb16e7)
-' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/73eQdr5' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [...](https://chromewebstore.google.com/detail/ggaabchcecdbomdcnbahdfddfikjmphe?utm_source=item-share-cb)  
